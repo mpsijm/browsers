@@ -212,3 +212,19 @@ pub fn linux_get_unsandboxed_home_dir() -> PathBuf {
     // TODO: escape sandbox if in snap/flatpak
     return dirs::home_dir().unwrap();
 }
+
+// returns true if already default
+pub fn set_default_web_browser() -> bool {
+    if is_default_web_browser() {
+        return true;
+    }
+
+    // xdg-mime default <name> <scheme1>
+    // xdg-mime default <name> <scheme2>
+    return false;
+}
+
+pub fn is_default_web_browser() -> bool {
+    // TODO
+    return true;
+}

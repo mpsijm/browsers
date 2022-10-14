@@ -17,9 +17,9 @@ pub fn set_as_default_web_browser() -> bool {
     return macos_utils::set_default_web_browser();
 }
 
-#[cfg(not(target_os = "macos"))]
+#[cfg(target_os = "linux")]
 pub fn set_as_default_web_browser() -> bool {
-    return true;
+    return linux_utils::set_default_web_browser();
 }
 
 #[derive(Serialize, Deserialize, Debug, Default)]
